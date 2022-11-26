@@ -13,7 +13,7 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>Days Since Last Chalga Song</title>
-        <meta name="description" content="Change me pls!" />
+        <meta name="description" content="Get the always up to date information about how many days have passed since a Chalga song has been released!" />
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="viewport"

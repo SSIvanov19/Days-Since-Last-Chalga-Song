@@ -31,7 +31,6 @@ export default class VideoService {
     "UC5Wy-frUjW5Pjqxi0xU-Fbw",
     "UCAvjic6NqR2EvjpGT4EyWeg",
     "UCYo2cFsn4NyVH3BF5PfzDkw",
-    "UCYo2cFsn4NyVH3BF5PfzDkw",
     "UCvpZFKWxPY6mOt1n8eDNKQA",
     "UCS24D4x3HqJ4148WpDvSdnQ",
     "UCF436ipNCsiVZKwwTIXy-SA",
