@@ -6,7 +6,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -14,4 +14,12 @@ model Example {
   id        String   @id @default(cuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+model Video {
+  id           String   @id @default(cuid())
+  videoId      String   @unique
+  publishedAt  DateTime
+  title        String
+  thumbnailURL String
 }

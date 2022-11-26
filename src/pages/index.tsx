@@ -1,9 +1,11 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import { calculateDaysBetwenDates } from "../utils/time";
+import { trpc } from "../utils/trpc";
 
 const Home: NextPage = () => {
-  const postQuery = null;
+  const videoQuery = trpc.videos.getLatestVideo.useQuery();
 
   return (
     <>
@@ -21,33 +23,33 @@ const Home: NextPage = () => {
           <h1 className="mt-8 text-5xl font-bold">
             Days since last chalga song:
           </h1>
-          <h1 className="mt-4 text-9xl font-bold">0</h1>
+          <h1 className="mt-4 text-9xl font-bold">{calculateDaysBetwenDates(new Date(Date.now()), videoQuery.data?.publishedAt) }</h1>
         </div>
         {
           /*This will be a component in the future*/
           // A windows that shows the thumbnail of the last chalga song
         }
         <a
-          href="https://www.youtube.com/watch?v=4wmWZ0KIgfU"
+          href={"https://www.youtube.com/watch?v=" + videoQuery.data?.videoId}
           target="_blank"
           rel="noreferrer"
         >
           <div className="mt-8 grid w-screen justify-items-center text-black">
             <div className="flex sm:flex-row flex-col h-80 w-4/5 items-center rounded-3xl bg-white sm:pl-7 sm:h-44 md:w-7/12 ">
               <Image
-                src="https://i.ytimg.com/vi/4wmWZ0KIgfU/hqdefault.jpg"
-                alt="Chalga"
+                src={videoQuery.data?.thumbnailURL}
+                alt="Video Thumbnail"
                 width={480}
                 height={360}
                 className="h-[56z%] w-60 rounded-md mt-3 mb-3 sm:mt-0 sm:mb-0 sm:w-44"
               />
               <div className="ml-4 grid gap-3 ">
-                <h1 className="text-md mq mt-2 mr-7 truncate text-center font-bold lg:text-2xl">
-                  Preslava - Malchete si / Преслава - Мълчете си , 2022
+                <h1 className="text-md mq mt-2 mr-7 truncate font-bold lg:text-2xl">
+                  {videoQuery.data?.title}
                 </h1>
                 <div className="flex">
                   <h1 className="text-md lg:text-xl">
-                    Release date: 23.11.2022
+                    Release date: {videoQuery.data?.publishedAt.toLocaleDateString()}
                   </h1>
                   <h1 className="text-md ml-7 mr-7 lg:text-xl">
                     Views: 100,000,000
@@ -57,6 +59,7 @@ const Home: NextPage = () => {
             </div>
           </div>
         </a>
+        {/*
         <div className="relative overflow-auto rounded-xl pt-8">
           <div className="flex justify-center">
             <div className="flex h-10 w-10 animate-bounce items-center justify-center rounded-full bg-white p-2 shadow-lg ring-1 ring-slate-900/5 dark:bg-slate-800 dark:ring-slate-200/20">
@@ -74,6 +77,7 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
+      */}
       </main>
     </>
   );
