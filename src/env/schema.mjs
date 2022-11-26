@@ -8,6 +8,8 @@ import { z } from "zod";
 export const serverSchema = z.object({
   DATABASE_URL: z.string().url(),
   NODE_ENV: z.enum(["development", "test", "production"]),
+  YOUTUBE_API_KEY: z.string(),
+  SECRET_KEY: z.string(),
 });
 
 /**

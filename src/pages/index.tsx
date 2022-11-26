@@ -66,7 +66,7 @@ const Home: NextPage = () => {
                     {videoQuery.data?.publishedAt.toLocaleDateString()}
                   </h1>
                   <h1 className="text-md ml-7 mr-7 lg:text-xl">
-                    Views: 100,000,000
+                    
                   </h1>
                 </div>
               </div>
