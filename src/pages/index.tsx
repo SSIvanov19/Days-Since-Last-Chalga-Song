@@ -14,10 +14,19 @@ import {
   PointElement,
   Tooltip,
 } from "chart.js";
+import { useEffect, useState } from "react";
 
-ChartJS.register(LinearScale, CategoryScale, PointElement, LineElement, Tooltip);
+ChartJS.register(
+  LinearScale,
+  CategoryScale,
+  PointElement,
+  LineElement,
+  Tooltip
+);
 
 const Home: NextPage = () => {
+  const [publishDate, setPublishDate] = useState("");
+
   const videoQuery = trpc.videos.getLatestVideo.useQuery();
   const lastMountVideos = trpc.videos.getVideosFromLastMonth.useQuery(1);
 
@@ -36,6 +45,12 @@ const Home: NextPage = () => {
 
     return dates.reverse();
   })();
+
+  useEffect(() => {
+    if (videoQuery.data) {
+      setPublishDate(videoQuery.data.publishedAt.toLocaleDateString());
+    }
+  }, [setPublishDate, videoQuery.data]);
 
   // Chart data with x being time and y being days for one mount
   const chartData = {
@@ -89,12 +104,12 @@ const Home: NextPage = () => {
         text: "Chart.js Line Chart",
       },
       tooltip: {
-        mode: 'index' as "index",
+        mode: "index" as 'index',
         intersect: false,
-        yAlign: 'bottom' as "bottom",
+        yAlign: "bottom" as 'bottom',
         displayColors: false,
         callbacks: {
-          label: ((tooltipItem: any) => {
+          label: (tooltipItem: any) => {
             if (tooltipItem.raw != 0) {
               if (tooltipItem.raw == 1) {
                 return "1 day since the last Chalga";
@@ -102,13 +117,17 @@ const Home: NextPage = () => {
 
               return `${tooltipItem.raw} days since the last Chalga`;
             }
-            
-            return lastMountVideos.data?.find(
-              (video) =>
-                video.publishedAt.toLocaleDateString() ===
-                dates[tooltipItem.dataIndex]
-            )?.title.slice(0, 30) + "...";
-          }),
+
+            return (
+              lastMountVideos.data
+                ?.find(
+                  (video) =>
+                    video.publishedAt.toLocaleDateString() ===
+                    dates[tooltipItem.dataIndex]
+                )
+                ?.title.slice(0, 30) + "..."
+            );
+          },
         },
       },
     },
@@ -117,22 +136,22 @@ const Home: NextPage = () => {
         beginAtZero: true,
         grid: {
           color: "rgba(255, 255, 255, 0.4)",
-          borderColor: 'white',
+          borderColor: "white",
         },
         ticks: {
           stepSize: 1,
           color: "rgba(255, 255, 255, 0.8)",
-        }
+        },
       },
-      x : {
+      x: {
         grid: {
           display: false,
         },
         ticks: {
           stepSize: 1,
           color: "rgba(255, 255, 255, 0.8)",
-        }
-      }
+        },
+      },
     },
   };
 
@@ -192,8 +211,7 @@ const Home: NextPage = () => {
                 </h1>
                 <div className="flex">
                   <h1 className="text-md lg:text-xl">
-                    Release date:{" "}
-                    {videoQuery.data?.publishedAt.toLocaleDateString()}
+                    Release date: {publishDate}
                   </h1>
                   <h1 className="text-md ml-7 mr-7 lg:text-xl"></h1>
                 </div>
@@ -202,7 +220,10 @@ const Home: NextPage = () => {
           </div>
           <div className="relative overflow-auto rounded-xl pt-8">
             <div className="flex justify-center">
-              <div className="flex h-10 w-10 animate-bounce items-center justify-center rounded-full bg-white p-2 shadow-lg ring-1 ring-slate-900/5 dark:bg-slate-800 dark:ring-slate-200/20">
+              <a
+                href="#chart"
+                className="flex h-10 w-10 animate-bounce items-center justify-center rounded-full bg-white p-2 shadow-lg ring-1 ring-slate-900/5 dark:bg-slate-800 dark:ring-slate-200/20"
+              >
                 <svg
                   className="h-6 w-6 text-violet-500"
                   fill="none"
@@ -214,13 +235,13 @@ const Home: NextPage = () => {
                 >
                   <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
                 </svg>
-              </div>
+              </a>
             </div>
           </div>
         </div>
-        <div className="flex justify-center items-center pt-12 pb-24">
-          <div className="sm:h=1/2 sm:w-1/2 w-full h-full pr-3 sm:pr-0">
-            <Line data={chartData} options={chartOptions} />
+        <div className="flex items-center justify-center pt-12 pb-24">
+          <div className="sm:h=1/2 h-full w-full pr-3 sm:w-1/2 sm:pr-0">
+            <Line id="chart" data={chartData} options={chartOptions} />
           </div>
         </div>
       </main>
