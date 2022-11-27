@@ -1,27 +1,54 @@
-# Create T3 App
+<div align = "center">
+  <h1>Days Since Last Chalga Song
+</div>
 
-This is an app bootstrapped according to the [init.tips](https://init.tips) stack, also known as the T3-Stack.
+<div align = "center">
+  <img src = "https://img.shields.io/github/languages/count/ssivanov19/Days-Since-Last-Chalga-Song?style=for-the-badge">
+  <img src = "https://img.shields.io/github/contributors/ssivanov19/Days-Since-Last-Chalga-Song?style=for-the-badge">
+  <img src = "https://img.shields.io/github/repo-size/ssivanov19/Days-Since-Last-Chalga-Song?style=for-the-badge">
+  <img src = "https://img.shields.io/github/last-commit/ssivanov19/Days-Since-Last-Chalga-Song?style=for-the-badge">
+  <img src = "https://img.shields.io/github/languages/top/ssivanov19/Days-Since-Last-Chalga-Song?style=for-the-badge">
+</div>
 
-## What's next? How do I make an app with this?
+## About 💻 <a name = "about"></a>
+Have you ever wonder when was the last chalga song released? Even if the answer is no, you are in the [right place](https://days-since-last-chalga-song.vercel.app/).
 
-We try to keep this project as simple as possible, so you can start with the most basic configuration and then move on to more advanced configuration.
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+## 🔧 Technologies
+Build using the t3 stack, Days Since Last Chalga Song is using cutting edge technologies, inlcuding:
+  <p align="left"> 
+  <a href="https://nextjs.org/" alt="NextJS"/><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/207px-Nextjs-logo.svg.png" height=52/></a>
+  <a href="https://www.typescriptlang.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png" alt="TypeScript" height=52/></a>
+  <a href="https://trpc.io/"><img src="https://user-images.githubusercontent.com/63718744/204143807-531b6ad5-b8af-45b1-af30-15cb6b9c52d4.png" alt="tRPC" height=52 /></a>
+    <a href="https://www.prisma.io/"><img src="https://user-images.githubusercontent.com/63718744/204143873-e6cb3163-af53-4e93-912b-eb61f85797c7.png" alt="Prisma" height=52 /></a>
+    <a href="https://tailwindcss.com/"><img src="https://user-images.githubusercontent.com/63718744/204143913-69933211-171c-48a8-ad6c-e686fe3b757e.png" alt="TailwindCSS" height=52 />
+  </p> 
 
-- [Next-Auth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [TailwindCSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+## Installation ⚙ <a name = "installation"></a>
 
-We also [roll our own docs](https://create.t3.gg) with some summary information and links to the respective documentation.
+You can start with downloading our project form [GitHub](https://github.com/SSIvanov19/Days-Since-Last-Chalga-Song/archive/refs/heads/master.zip) by pressing the **green clone button**
 
-Also checkout these awesome tutorials on `create-t3-app`.
+OR
 
-- [Build a Blog With the T3 Stack - tRPC, TypeScript, Next.js, Prisma & Zod](https://www.youtube.com/watch?v=syEWlxVFUrY)
-- [Build a Live Chat Application with the T3 Stack - TypeScript, Tailwind, tRPC](https://www.youtube.com/watch?v=dXRRY37MPuk)
-- [Build a full stack app with create-t3-app](https://www.nexxel.dev/blog/ct3a-guestbook)
-- [A first look at create-t3-app](https://dev.to/ajcwebdev/a-first-look-at-create-t3-app-1i8f)
+Pasting this line of code in **your favourite Terminal**:
 
-## How do I deploy this?
+```
+git clone --recursive https://github.com/SSIvanov19/Days-Since-Last-Chalga-Song.git
+```
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+## Deployment 💻
+First you need to make a **.env** in the in the **root** folder. You can see [**.env.example**](https://github.com/SSIvanov19/Days-Since-Last-Chalga-Song/blob/main/.env.example) on what environment variable you need to set up!
+
+Then you need to make the migration with the Database, this can be acived by pasting the following lines in **your favourite Terminal**, while you are in the **root** folder:
+```
+  npm run db-push
+```
+
+To start the development server, simply type:
+```
+  npm run dev
+```
+
+```
+Thank you for scrolling this far! Please consider giving the repo a star ⭐.
+```
