@@ -11,4 +11,4 @@ jobs:
         run: |
           curl --request GET \
           --url 'https://days-since-last-chalga-song.vercel.app/api/trpc/videos.updateVideoList' \
-          --header 'authorization: ${{ secrets.API_SECRET_KEY }}'
+          --header 'authorization: ${{ secrets.SECRET_KEY }}'
