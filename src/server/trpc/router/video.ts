@@ -1,3 +1,4 @@
+import { z } from "zod";
 import updateVideo from "../../../utils/videoUtils";
 import { router, publicProcedure } from "../trpc";
 
@@ -29,5 +30,22 @@ export const videoRouter = router({
     return {
       message: "Updated video list",
     };
+  }),
+  // route that will get all the videos realeased within the last mount
+  // get latest videos from database
+  getVideosFromLastMonth: publicProcedure.input(z.number()).query(async ({ ctx, input }) => {
+    const videos = await ctx.prisma.video.findMany({
+      where: {
+        publishedAt: {
+          gte: new Date(new Date().setMonth(new Date().getMonth() - input)),
+        },
+      },
+      orderBy: {
+        publishedAt: "desc",
+      },
+    });
+
+    // return the latest video
+    return videos;
   }),
 });
