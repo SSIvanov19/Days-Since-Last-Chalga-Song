@@ -34,6 +34,7 @@ const Home: NextPage = () => {
     new Date(Date.now()),
     videoQuery.data?.publishedAt!
   );
+  
   const dates = (() => {
     const dates = [];
 
