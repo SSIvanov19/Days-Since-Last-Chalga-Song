@@ -20,6 +20,14 @@ export default class VideoService {
     });
   }
 
+  async getVideoInfo(videoId: string) {
+    const req = await fetch(
+      `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${this.apiKey}`);
+
+    const json = await req.json();
+    return json.items[0];
+  }
+
   private apiKey = process.env.YOUTUBE_API_KEY;
   private channelsIds = [
     "UCu3z3dIQNb90UNp6_w5O5rw",

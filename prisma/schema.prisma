@@ -22,4 +22,5 @@ model Video {
   publishedAt  DateTime
   title        String
   thumbnailURL String
+  channelTitle String @default("Unknown")
 }

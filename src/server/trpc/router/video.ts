@@ -1,9 +1,10 @@
 import { z } from "zod";
+import VideoService from "../../../services/videoService";
 import updateVideo from "../../../utils/videoUtils";
 import { router, publicProcedure } from "../trpc";
 
 const videoSchema = z.object({
-  videoId: z.string()
+  videoURL: z.string()
 });
 
 export const videoRouter = router({
@@ -73,6 +74,44 @@ export const videoRouter = router({
         };
       }
 
-      return input;
+      // get the video id from the url
+      const videoId = input.videoURL.split("v=")[1];
+
+      if (videoId === undefined) {
+        return {
+          error: "Invalid video url",
+        };
+      }
+      
+      const videoInDatabase = await ctx.prisma.video.findMany({
+        where: {
+          videoId: videoId,
+        },
+      });
+      
+      // If there is no video in the database, create a new one
+      if (videoInDatabase.length !== 0) {
+        return {
+          error: "Video already exists",
+        };
+      }
+
+      const videoService = new VideoService();
+      
+      const video = await videoService.getVideoInfo(videoId);
+
+      await ctx.prisma.video.create({
+        data: {
+          videoId: videoId,
+          title: video.snippet.title,
+          publishedAt: video.snippet.publishedAt,
+          thumbnailURL: video.snippet.thumbnails.high.url,
+          channelTitle: video.snippet.channelTitle,
+        },
+      });
+
+      return {
+        message: "Video added",
+      };
     }),
 });
