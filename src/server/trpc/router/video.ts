@@ -3,11 +3,7 @@ import updateVideo from "../../../utils/videoUtils";
 import { router, publicProcedure } from "../trpc";
 
 const videoSchema = z.object({
-  videoId: z.string(),
-  title: z.string(),
-  publishedAt: z.string(),
-  thumbnailURL: z.string(),
-  channelTitle: z.string(),
+  videoId: z.string()
 });
 
 export const videoRouter = router({
