@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApp.MainPage">
+
+    <ScrollView>
+        <ScrollView.Background>
+            <LinearGradientBrush EndPoint="0,1">
+                <GradientStop Color="#2e026d"
+                          Offset="0.1" />
+                <GradientStop Color="#15162c"
+                          Offset="1.0" />
+            </LinearGradientBrush>
+        </ScrollView.Background>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label
+                Text="Days since last chalga song:"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="48"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"
+                TextColor="White"
+                FontAttributes="Bold"/>
+
+            <Label
+                Text="0"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Days since last chalga song"
+                FontSize="128"
+                HorizontalOptions="Center"
+                TextColor="White"
+                FontAttributes="Bold"/>
+            <Frame
+                HeightRequest="320"
+                CornerRadius="24">
+                <StackLayout>
+                    <Border
+                        HeightRequest="180">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="12"/>
+                        </Border.StrokeShape>
+                        <Image
+                            Source="https://i.ytimg.com/vi/0aRKsIYbRZA/hqdefault.jpg"
+                            Aspect="AspectFill">
+                        </Image>
+                    </Border>
+                    <Label
+                        Padding="0,10,0,0"
+                        Text="{Binding VideoTitle, StringFormat='{0}'}"
+                        FontSize="16"
+                        FontAttributes="Bold"/>
+                    <Label
+                        Padding="0,10,0,0"
+                        Text="Release Date: 3.12.2022"
+                        FontSize="16"/>
+                    <Label
+                        Padding="0,10,0,0"
+                        Text="Uploaded by: Ra Music"
+                        FontSize="16"/>
+                </StackLayout>
+            </Frame>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

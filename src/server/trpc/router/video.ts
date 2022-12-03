@@ -4,22 +4,31 @@ import updateVideo from "../../../utils/videoUtils";
 import { router, publicProcedure } from "../trpc";
 
 const videoSchema = z.object({
-  videoURL: z.string()
+  videoURL: z.string(),
 });
 
 export const videoRouter = router({
-  getLatestVideo: publicProcedure.query(async ({ ctx }) => {
-    // get latest videos from database
-    const videos = await ctx.prisma.video.findMany({
-      orderBy: {
-        publishedAt: "desc",
+  getLatestVideo: publicProcedure
+    .input(z.object({}).optional())
+    .output(z.any())
+    .meta({
+      openapi: {
+        method: "GET",
+        path: "/video/getLatestVideo",
       },
-      take: 1,
-    });
+    })
+    .query(async ({ ctx }) => {
+      // get latest videos from database
+      const videos = await ctx.prisma.video.findMany({
+        orderBy: {
+          publishedAt: "desc",
+        },
+        take: 1,
+      });
 
-    // return the latest video
-    return videos[0];
-  }),
+      // return the latest video
+      return videos[0];
+    }),
   updateVideoList: publicProcedure.query(async ({ ctx }) => {
     // check if request is authorized with secret key
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -64,7 +73,6 @@ export const videoRouter = router({
         path: "/video/add",
       },
     })
-
     .mutation(async ({ ctx, input }) => {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       //@ts-expect-error
@@ -82,13 +90,13 @@ export const videoRouter = router({
           error: "Invalid video url",
         };
       }
-      
+
       const videoInDatabase = await ctx.prisma.video.findMany({
         where: {
           videoId: videoId,
         },
       });
-      
+
       // If there is no video in the database, create a new one
       if (videoInDatabase.length !== 0) {
         return {
@@ -97,7 +105,7 @@ export const videoRouter = router({
       }
 
       const videoService = new VideoService();
-      
+
       const video = await videoService.getVideoInfo(videoId);
 
       await ctx.prisma.video.create({
