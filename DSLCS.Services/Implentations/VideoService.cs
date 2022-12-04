@@ -24,7 +24,7 @@ internal class VideoService : IVideoService
 	{
 		VideoVM? video = new();
 		
-		Uri uri = new("http://10.0.2.2:3000/api/video/getLatestVideo");
+		Uri uri = new("https://days-since-last-chalga-song.vercel.app/api/video/getLatestVideo");
 		try
 		{
 			HttpResponseMessage response = await _httpClient.GetAsync(uri);

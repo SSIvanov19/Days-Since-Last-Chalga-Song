@@ -1,15 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Shell
-    x:Class="MobileApp.AppShell"
+    x:Class="DSLCS.App.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:MobileApp"
+    xmlns:local="clr-namespace:DSLCS.App"
     Shell.FlyoutBehavior="Disabled"
     Shell.NavBarIsVisible="False">
 
     <ShellContent
         Title=""
-        ContentTemplate="{DataTemplate local:MainPage}"
+        ContentTemplate="{DataTemplate local:Pages.MainPage}"
         Route="MainPage" />
+
+    <TabBar>
+        <Tab Title="Main"
+            Icon="cat.png">
+
+        </Tab>
+        <Tab Title="Stats"
+            Icon="dog.png">
+        </Tab>
+        <Tab Title="Stats"
+            Icon="dog.png">
+        </Tab>
+    </TabBar>
 
 </Shell>

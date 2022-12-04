@@ -1,4 +1,4 @@
-﻿namespace MobileApp;
+﻿namespace DSLCS.App;
 
 public partial class App : Application
 {

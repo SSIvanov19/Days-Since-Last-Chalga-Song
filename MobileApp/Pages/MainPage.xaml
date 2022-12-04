@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MobileApp.MainPage">
+             x:Class="DSLCS.App.Pages.MainPage">
 
     <ScrollView>
         <ScrollView.Background>
@@ -16,8 +16,22 @@
             Spacing="25"
             Padding="30,0"
             VerticalOptions="Center">
-
-            <Label
+            <StackLayout
+                x:Name="LoadingLayout">
+                <ActivityIndicator
+                    x:Name="LoadingIndicator"
+                    Color="White"
+                    IsRunning="True"/>
+                <Label
+                    x:Name="LoadingText"
+                    Text="Loading..."
+                    TextColor="White"
+                    />
+            </StackLayout>
+            <StackLayout
+                 x:Name="MainLayout"
+                 IsVisible="False">
+                <Label
                 Text="Days since last chalga song:"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="48"
@@ -26,7 +40,8 @@
                 TextColor="White"
                 FontAttributes="Bold"/>
 
-            <Label
+                <Label
+                x:Name="Days"
                 Text="0"
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Days since last chalga song"
@@ -34,37 +49,39 @@
                 HorizontalOptions="Center"
                 TextColor="White"
                 FontAttributes="Bold"/>
-            <Frame
+                <Frame
                 HeightRequest="320"
                 CornerRadius="24">
-                <StackLayout>
-                    <Border
+                    <StackLayout>
+                        <Border
                         HeightRequest="180">
-                        <Border.StrokeShape>
-                            <RoundRectangle CornerRadius="12"/>
-                        </Border.StrokeShape>
-                        <Image
-                            Source="https://i.ytimg.com/vi/0aRKsIYbRZA/hqdefault.jpg"
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="12"/>
+                            </Border.StrokeShape>
+                            <Image
+                            x:Name="VideoThumbnail"
                             Aspect="AspectFill">
-                        </Image>
-                    </Border>
-                    <Label
+                            </Image>
+                        </Border>
+                        <Label
+                        x:Name="VideoTitle"
                         Padding="0,10,0,0"
-                        Text="{Binding VideoTitle, StringFormat='{0}'}"
+                        Text=""
                         FontSize="16"
                         FontAttributes="Bold"/>
-                    <Label
+                        <Label
+                        x:Name="VideoPublishedDate"
                         Padding="0,10,0,0"
-                        Text="Release Date: 3.12.2022"
+                        Text=""
                         FontSize="16"/>
-                    <Label
+                        <Label
+                        x:Name="VideoChannelName"
                         Padding="0,10,0,0"
-                        Text="Uploaded by: Ra Music"
+                        Text=""
                         FontSize="16"/>
-                </StackLayout>
-            </Frame>
-
-
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
         </VerticalStackLayout>
     </ScrollView>
 

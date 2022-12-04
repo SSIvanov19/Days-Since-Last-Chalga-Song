@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace MobileApp;
+namespace DSLCS.App;
 
 [Application]
 public class MainApplication : MauiApplication
