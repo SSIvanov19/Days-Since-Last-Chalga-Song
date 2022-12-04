@@ -6,23 +6,30 @@
     xmlns:local="clr-namespace:DSLCS.App"
     Shell.FlyoutBehavior="Disabled"
     Shell.NavBarIsVisible="False">
-
-    <ShellContent
-        Title=""
-        ContentTemplate="{DataTemplate local:Pages.MainPage}"
-        Route="MainPage" />
-
+    <Shell.Resources>
+        <Style TargetType="Tab">
+            <Setter Property="Shell.TabBarBackgroundColor"
+                Value="#15162c" />
+            <Setter Property="Shell.TabBarTitleColor"
+                Value="White" />
+            <Setter Property="Shell.TabBarUnselectedColor"
+                Value="#d3d3d3" />
+        </Style>
+    </Shell.Resources>
     <TabBar>
         <Tab Title="Main"
-            Icon="cat.png">
-
+            Icon="main_page_icon.svg">
+            <ShellContent ContentTemplate="{DataTemplate local:Pages.MainPage}" />
         </Tab>
         <Tab Title="Stats"
-            Icon="dog.png">
+            Icon="stats_page_icon">
+            <ShellContent ContentTemplate="{DataTemplate local:Pages.MainPage}" />
         </Tab>
-        <Tab Title="Stats"
-            Icon="dog.png">
+        <Tab Title="Settings"
+            Icon="settings_page_icon.svg">
+            <ShellContent ContentTemplate="{DataTemplate local:Pages.MainPage}" />
         </Tab>
     </TabBar>
 
 </Shell>
+

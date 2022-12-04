@@ -26,7 +26,8 @@ public partial class MainPage : ContentPage
             VideoPublishedDate.Text = $"Release Date: {DateOnly.FromDateTime(video.publishedAt ?? DateTime.Now).ToString()}";
             VideoThumbnail.Source = video.thumbnailURL;
             // Calculate days between now and the release of the video
-            Days.Text = (DateOnly.FromDateTime(DateTime.Now).DayNumber - DateOnly.FromDateTime(video.publishedAt ?? DateTime.Now).DayNumber).ToString();
+            Days.Text = (DateOnly.FromDateTime(DateTime.Now).DayNumber
+                - DateOnly.FromDateTime(video.publishedAt ?? DateTime.Now).DayNumber).ToString();
             LoadingLayout.IsVisible = false;
             MainLayout.IsVisible = true;
         }

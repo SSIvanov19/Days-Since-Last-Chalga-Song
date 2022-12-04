@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace MobileApp;
+namespace DSLCS.App;
 
 public class Program
 {

@@ -1,6 +1,8 @@
 ﻿using Foundation;
+using Microsoft.Maui;
+using Microsoft.Maui.Hosting;
 
-namespace MobileApp;
+namespace DSLCS.App;
 
 [Register("AppDelegate")]
 public class AppDelegate : MauiUIApplicationDelegate

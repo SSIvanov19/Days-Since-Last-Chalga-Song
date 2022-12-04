@@ -26,7 +26,8 @@
                     x:Name="LoadingText"
                     Text="Loading..."
                     TextColor="White"
-                    />
+                    HorizontalTextAlignment="Center"
+                    FontSize="64"/>
             </StackLayout>
             <StackLayout
                  x:Name="MainLayout"
