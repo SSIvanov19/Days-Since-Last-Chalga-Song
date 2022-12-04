@@ -23,11 +23,11 @@
         </Tab>
         <Tab Title="Stats"
             Icon="stats_page_icon">
-            <ShellContent ContentTemplate="{DataTemplate local:Pages.MainPage}" />
+            <ShellContent ContentTemplate="{DataTemplate local:Pages.StatsPage}" />
         </Tab>
         <Tab Title="Settings"
             Icon="settings_page_icon.svg">
-            <ShellContent ContentTemplate="{DataTemplate local:Pages.MainPage}" />
+            <ShellContent ContentTemplate="{DataTemplate local:Pages.SettingsPage}" />
         </Tab>
     </TabBar>
 

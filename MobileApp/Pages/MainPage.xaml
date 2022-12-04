@@ -27,59 +27,70 @@
                     Text="Loading..."
                     TextColor="White"
                     HorizontalTextAlignment="Center"
+                    FontFamily="Inter"
+                    FontAttributes="Bold"
                     FontSize="64"/>
             </StackLayout>
             <StackLayout
                  x:Name="MainLayout"
                  IsVisible="False">
                 <Label
-                Text="Days since last chalga song:"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="48"
-                HorizontalOptions="Center"
-                HorizontalTextAlignment="Center"
-                TextColor="White"
-                FontAttributes="Bold"/>
+                    Text="Days since last chalga song:"
+                    SemanticProperties.HeadingLevel="Level1"
+                    FontSize="46"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    TextColor="White"
+                    FontFamily="Inter"
+                    FontAttributes="Bold"/>
 
                 <Label
-                x:Name="Days"
-                Text="0"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Days since last chalga song"
-                FontSize="128"
-                HorizontalOptions="Center"
-                TextColor="White"
-                FontAttributes="Bold"/>
+                    x:Name="Days"
+                    Text="0"
+                    SemanticProperties.HeadingLevel="Level2"
+                    SemanticProperties.Description="Days since last chalga song"
+                    FontSize="128"
+                    HorizontalOptions="Center"
+                    TextColor="White"
+                    FontFamily="Inter"
+                    FontAttributes="Bold"/>
                 <Frame
-                HeightRequest="320"
-                CornerRadius="24">
+                    HeightRequest="320"
+                    CornerRadius="24">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTappedOverVideoContainer"/>
+                    </Frame.GestureRecognizers>
                     <StackLayout>
                         <Border
-                        HeightRequest="180">
+                            HeightRequest="180">
                             <Border.StrokeShape>
                                 <RoundRectangle CornerRadius="12"/>
                             </Border.StrokeShape>
                             <Image
-                            x:Name="VideoThumbnail"
-                            Aspect="AspectFill">
+                                x:Name="VideoThumbnail"
+                                Aspect="AspectFill">
                             </Image>
                         </Border>
                         <Label
-                        x:Name="VideoTitle"
-                        Padding="0,10,0,0"
-                        Text=""
-                        FontSize="16"
-                        FontAttributes="Bold"/>
+                            LineBreakMode="TailTruncation"
+                            x:Name="VideoTitle"
+                            Padding="0,10,0,0"
+                            Text=""
+                            FontSize="16"
+                            FontFamily="Inter"
+                            FontAttributes="Bold"/>
                         <Label
-                        x:Name="VideoPublishedDate"
-                        Padding="0,10,0,0"
-                        Text=""
-                        FontSize="16"/>
+                            x:Name="VideoPublishedDate"
+                            Padding="0,10,0,0"
+                            FontFamily="Inter"
+                            Text=""
+                            FontSize="16"/>
                         <Label
-                        x:Name="VideoChannelName"
-                        Padding="0,10,0,0"
-                        Text=""
-                        FontSize="16"/>
+                            x:Name="VideoChannelName"
+                            Padding="0,10,0,0"
+                            FontFamily="Inter"
+                            Text=""
+                            FontSize="16"/>
                     </StackLayout>
                 </Frame>
             </StackLayout>
