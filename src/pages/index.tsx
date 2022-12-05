@@ -164,7 +164,7 @@ const Home: NextPage = () => {
           name="description"
           content="Get the always up to date information about how many days have passed since a Chalga song has been released!"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale = 1, shrink-to-fit = no"
