@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+             xmlns:dxcv="clr-namespace:DevExpress.Maui.CollectionView;assembly=DevExpress.Maui.CollectionView"
+             xmlns:local="clr-namespace:DSLCS.App.ViewModels"
              x:Class="DSLCS.App.Pages.StatsPage"
              Title="StatsPage">
+    <ContentPage.BindingContext>
+        <local:ViewModel x:Name="VM"/>
+    </ContentPage.BindingContext>
     <ScrollView>
         <ScrollView.Background>
             <LinearGradientBrush EndPoint="0,1">
@@ -15,15 +21,41 @@
         <VerticalStackLayout
             Spacing="25"
             Padding="30,0"
-            VerticalOptions="Center">
-            <Label
-                x:Name="LoadingText"
-                Text="Stats Page"
-                TextColor="White"
-                HorizontalTextAlignment="Center"
-                FontFamily="Inter"
-                FontAttributes="Bold"
-                FontSize="50"/>
+            VerticalOptions="Start">
+            <dxe:DXCalendar
+                x:Name="Calendar"
+                SelectedDateChanged="OnTappedOverCalendar"
+                CustomDayCellStyle="CustomDayCellStyle"
+                DisplayDate="{Binding DisplayDate}" ActiveViewType="{Binding ActiveViewType}" ShowTrailingDays="True" 
+                BackgroundColor="Transparent">
+                <dxe:DXCalendar.HeaderStyle>
+                    <dxe:CalendarHeaderStyle TextColor="White"/>
+                </dxe:DXCalendar.HeaderStyle>
+                <dxe:DXCalendar.DayOfWeekCellStyle>
+                    <dxe:CalendarDayOfWeekCellStyle
+                        FontFamily="Inter"
+                        TextColor="White"/>
+                </dxe:DXCalendar.DayOfWeekCellStyle>
+                <dxe:DXCalendar.DayCellStyle>
+                    <dxe:CalendarDayCellStyle
+                        FontFamily="Inter"
+                        TextColor="White">
+                    </dxe:CalendarDayCellStyle>
+                </dxe:DXCalendar.DayCellStyle>
+                <dxe:DXCalendar.MonthCellStyle>
+                    <dxe:CalendarMonthCellStyle FontFamily="Inter" TextColor="White"/>
+                </dxe:DXCalendar.MonthCellStyle>
+                <dxe:DXCalendar.YearCellStyle>
+                    <dxe:CalendarYearCellStyle
+                        FontFamily="Inter"
+                        TextColor="White"/>
+                </dxe:DXCalendar.YearCellStyle>
+            </dxe:DXCalendar>
+            <StackLayout IsVisible="False" x:Name="VideoLayout">
+                <Label x:Name="VideoCollectionLabel" FontSize="16" FontFamily="Inter" HorizontalTextAlignment="Center" TextColor="White"/>
+                <StackLayout x:Name="VideosContainer">
+                </StackLayout>
+            </StackLayout>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

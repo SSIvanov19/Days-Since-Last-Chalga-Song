@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            
-             x:Class="DSLCS.App.Pages.SettingsPage">
+             x:Class="DSLCS.App.Pages.SongPage"
+             Title="SongPage">
     <ScrollView>
         <ScrollView.Background>
             <LinearGradientBrush EndPoint="0,1">
@@ -12,13 +12,18 @@
                           Offset="1.0" />
             </LinearGradientBrush>
         </ScrollView.Background>
-        <Label
-            x:Name="PlaceholderText"
-            Text="Settings Page"
-            TextColor="White"
-            HorizontalTextAlignment="Center"
-            FontFamily="Inter"
-            FontAttributes="Bold"
-            FontSize="50"/>
+        <Shell.BackButtonBehavior>
+            <BackButtonBehavior />
+        </Shell.BackButtonBehavior>
+        <VerticalStackLayout>
+            <Label
+                x:Name="PlaceholderText"
+                Text=""
+                TextColor="White"
+                HorizontalTextAlignment="Center"
+                FontFamily="Inter"
+                FontAttributes="Bold"
+                FontSize="50"/>
+        </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

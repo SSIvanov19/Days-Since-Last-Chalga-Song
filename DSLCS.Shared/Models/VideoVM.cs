@@ -8,8 +8,8 @@ namespace DSLCS.Shared.Models;
 
 public class VideoVM
 {
-	public string? id { get; set; }
-	public string? videoId { get; set; }
+	public string? id { get; set; }//
+	public string? videoId { get; set; }//
 
 	public DateTime? publishedAt { get; set; }
 

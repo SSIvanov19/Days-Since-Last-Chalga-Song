@@ -2,6 +2,7 @@
 using DSLCS.Services;
 using CommunityToolkit.Maui;
 using DSLCS.App.Pages;
+using DevExpress.Maui;
 
 namespace DSLCS.App;
 
@@ -13,7 +14,8 @@ public static class MauiProgram
 		builder
 			.UseMauiApp<App>()
 			.UseMauiCommunityToolkit()
-			.ConfigureFonts(fonts =>
+			.UseDevExpress()
+            .ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
@@ -27,7 +29,8 @@ public static class MauiProgram
 		builder.Services
 			.AddSingleton<MainPage>()
 			.AddSingleton<StatsPage>()
-			.AddSingleton<SettingsPage>();
+			.AddSingleton<SettingsPage>()
+			.AddSingleton<SongPage>();
 		
 
 #if DEBUG

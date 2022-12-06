@@ -30,6 +30,9 @@
             <ShellContent ContentTemplate="{DataTemplate local:Pages.SettingsPage}" />
         </Tab>
     </TabBar>
+    <ShellContent
+        ContentTemplate="{DataTemplate local:Pages.SongPage}"
+        Route="video"/>
 
 </Shell>
 

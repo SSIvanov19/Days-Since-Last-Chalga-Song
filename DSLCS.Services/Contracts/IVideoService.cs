@@ -10,4 +10,8 @@ namespace DSLCS.Services.Contracts;
 public interface IVideoService
 {
 	Task<VideoVM?> GetLatestVideo();
+
+    Task<List<VideoVM>?> GetVideosInRange(DateTime startDate, DateTime endDate);
+
+    Task<VideoVM?> GetVideoByVideoId(string videoId);
 }
