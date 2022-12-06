@@ -122,4 +122,32 @@ export const videoRouter = router({
         message: "Video added",
       };
     }),
+    getVideoBetweenDates: publicProcedure
+    .input(z.object({
+      startDate: z.string(),
+      endDate: z.string()
+    }))
+    .output(z.any())
+    .meta({
+      openapi: {
+        method: "GET",
+        path: "/video/getVideoBetweenDates",
+      },
+    })
+    .query(async ({ ctx, input }) => {
+      const videos = await ctx.prisma.video.findMany({
+        where: {
+          publishedAt: {
+            gte: new Date(input.startDate),
+            lte: new Date(input.endDate)
+          },
+        },
+        orderBy: {
+          publishedAt: "desc",
+        },
+      });
+
+      // return the latest video
+      return videos;
+    }),
 });
