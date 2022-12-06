@@ -150,4 +150,25 @@ export const videoRouter = router({
       // return the latest video
       return videos;
     }),
+    getVideoByVideoId: publicProcedure
+    .input(z.object({
+      videoId: z.string()
+    }))
+    .output(z.any())
+    .meta({
+      openapi: {
+        method: "GET",
+        path: "/video/getVideoByVideoId",
+      },
+    })
+    .query(async ({ ctx, input }) => {
+      const video = await ctx.prisma.video.findFirst({
+        where: {
+          videoId: input.videoId
+        }
+      });
+
+      // return the latest video
+      return video;
+    }),
 });
