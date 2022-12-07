@@ -10,6 +10,8 @@ export const serverSchema = z.object({
   NODE_ENV: z.enum(["development", "test", "production"]),
   YOUTUBE_API_KEY: z.string(),
   SECRET_KEY: z.string(),
+  ONESIGNAL_APP_ID: z.string(),
+  ONESIGNAL_REST_API_KEY: z.string(),
 });
 
 /**

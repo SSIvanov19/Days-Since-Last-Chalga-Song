@@ -1,4 +1,5 @@
 import { z } from "zod";
+import NotificationService from "../../../services/NotificationService";
 import VideoService from "../../../services/videoService";
 import updateVideo from "../../../utils/videoUtils";
 import { router, publicProcedure } from "../trpc";
@@ -90,7 +91,7 @@ export const videoRouter = router({
           error: "Invalid video url",
         };
       }
-
+      
       const videoInDatabase = await ctx.prisma.video.findMany({
         where: {
           videoId: videoId,
@@ -117,6 +118,13 @@ export const videoRouter = router({
           channelTitle: video.snippet.channelTitle,
         },
       });
+      
+      const notificationService = new NotificationService();
+
+      await notificationService.sendNotification(
+        video.snippet.title,
+        video.snippet.channelTitle,
+        video.snippet.thumbnails.high.url);
 
       return {
         message: "Video added",
