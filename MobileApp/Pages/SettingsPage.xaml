@@ -12,13 +12,52 @@
                           Offset="1.0" />
             </LinearGradientBrush>
         </ScrollView.Background>
-        <Label
-            x:Name="PlaceholderText"
-            Text="Settings Page"
-            TextColor="White"
-            HorizontalTextAlignment="Center"
-            FontFamily="Inter"
-            FontAttributes="Bold"
-            FontSize="50"/>
+        <StackLayout>
+            <VerticalStackLayout VerticalOptions="FillAndExpand">
+                <Label
+                x:Name="PlaceholderText"
+                Text="Settings"
+                TextColor="White"
+                HorizontalTextAlignment="Center"
+                FontFamily="Inter"
+                FontAttributes="Bold"
+                FontSize="50"
+                Margin="0, 10, 0, 0"/>
+                <Frame CornerRadius="24"
+                       Margin="10,0,10,0">
+                    <StackLayout>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Label
+                                Margin="0,0,0,0"
+                                FontFamily="Inter"
+                                Text="Allow notifications:"
+                                TextColor="Black"
+                                VerticalTextAlignment="Center"
+                                FontSize="18"
+                                Grid.Column="0" 
+                                FontAttributes="Bold"
+                                HorizontalTextAlignment="Start"/>
+                            <Switch
+                                Grid.Column="1"
+                                x:Name="NotificationSwitch"/>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+            </VerticalStackLayout>
+            <Label
+                Text="Create with ❤ by Stoyan Ivanov"
+                TextColor="White"
+                HorizontalTextAlignment="Center"
+                FontFamily="Inter"
+                FontAttributes="Bold"
+                FontSize="17"
+                Margin="0,0,0,20"
+                VerticalOptions="End"/>
+        </StackLayout>
     </ScrollView>
 </ContentPage>
