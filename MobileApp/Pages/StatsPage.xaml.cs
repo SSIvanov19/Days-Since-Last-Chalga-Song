@@ -1,9 +1,8 @@
 using DevExpress.Maui.Editors;
-using DSLCS.App.ViewModels;
 using DSLCS.Services.Contracts;
 using DSLCS.Shared.Models;
+using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Shapes;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace DSLCS.App.Pages;
 
@@ -62,6 +61,13 @@ public partial class StatsPage : ContentPage
 
     protected async void OnTappedOverCalendar(object sender, EventArgs e)
     {
+        var videoContainerChildCount = VideosContainer.Children.Count;
+        
+        for (int i = 0; i < videoContainerChildCount; i++)
+        {
+            VideosContainer.Children.RemoveAt(0);
+        }
+        
         if (!(LastSelectedDate.Year == Calendar.SelectedDate.Value.Year && LastSelectedDate.Month == Calendar.SelectedDate.Value.Month))
         {
             var firstDayOfMonth = new DateTime(Calendar.SelectedDate.Value.Year, Calendar.SelectedDate.Value.Month, 1).AddMonths(-1);
@@ -73,24 +79,17 @@ public partial class StatsPage : ContentPage
             if (localVideos == null)
             {
                 await DisplayAlert("Error", "There was a problem! Please try again later!", "OK");
-                LastSelectedDate = Calendar.SelectedDate.Value;
                 return;
             }
 
             Videos = Videos.Concat(localVideos).ToList();
 
-            Videos = Videos.DistinctBy(x => x.videoId).ToList();
-
             Calendar.DisplayDate = Calendar.DisplayDate.AddSeconds(1);
         }
 
         LastSelectedDate = Calendar.SelectedDate.Value;
-
-
-        for (int i = 0; i <= VideosContainer.Children.Count; i++)
-        {
-            VideosContainer.Children.RemoveAt(0);
-        }
+        
+        Videos = Videos.DistinctBy(x => x.videoId).ToList();
 
         var videos = Videos.Where(x =>
             x.publishedAt.Value.Day == Calendar.SelectedDate.Value.Day &&

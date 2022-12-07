@@ -6,9 +6,6 @@
              xmlns:local="clr-namespace:DSLCS.App.ViewModels"
              x:Class="DSLCS.App.Pages.StatsPage"
              Title="StatsPage">
-    <ContentPage.BindingContext>
-        <local:ViewModel x:Name="VM"/>
-    </ContentPage.BindingContext>
     <ScrollView>
         <ScrollView.Background>
             <LinearGradientBrush EndPoint="0,1">

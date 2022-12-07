@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DSLCS.App"
              x:Class="DSLCS.App.Pages.SongPage"
-             Title="SongPage">
+             Title="SongPage"
+             NavigationPage.HasBackButton="True">
     <ScrollView>
         <ScrollView.Background>
             <LinearGradientBrush EndPoint="0,1">
@@ -13,17 +15,107 @@
             </LinearGradientBrush>
         </ScrollView.Background>
         <Shell.BackButtonBehavior>
-            <BackButtonBehavior />
+            <BackButtonBehavior IconOverride="back_arrow.svg"
+                                IsVisible="True"
+                                IsEnabled="True"/>
         </Shell.BackButtonBehavior>
-        <VerticalStackLayout>
+        <StackLayout>
+            <VerticalStackLayout Padding="20,40,20,20" VerticalOptions="FillAndExpand">
+                <ImageButton Source="back_arrow.svg"
+                    Clicked="OnImageButtonClicked"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    Margin="-5,-20,10,30"/>
+                <Frame
+                    CornerRadius="24">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTappedOverVideoContainer"/>
+                    </Frame.GestureRecognizers>
+                    <StackLayout>
+                        <Label
+                        HorizontalTextAlignment="Center"
+                        LineBreakMode="TailTruncation"
+                        x:Name="VideoTitle"
+                        Margin="0,10,0,10"
+                        Text=""
+                        FontSize="21"
+                        FontFamily="Inter"
+                        FontAttributes="Bold"/>
+                        <Border
+                            HeightRequest="180"
+                            Margin="0,10,0,10">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="12"/>
+                            </Border.StrokeShape>
+                            <Image
+                            x:Name="VideoThumbnail"
+                            Aspect="AspectFill">
+                            </Image>
+                        </Border>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Label
+                            Grid.Row="0"
+                            Margin="0,10,0,10"
+                            FontFamily="Inter"
+                            Text="Release Date:"
+                            TextColor="Black"
+                            FontSize="16"
+                            Grid.Column="0" 
+                            FontAttributes="Bold"
+                            HorizontalTextAlignment="Start"/>
+                            <Label 
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            FontAttributes="Bold"
+                            HorizontalTextAlignment="End"
+                            x:Name="VideoPublishedDate"
+                            Margin="0,10,0,10"
+                            FontFamily="Inter"
+                            Text="07.12.2022"
+                            FontSize="16"
+                            TextColor="Black"/>
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Label
+                            Margin="0,10,0,10"
+                            FontFamily="Inter"
+                            Text="Published By:"
+                            TextColor="Black"
+                            FontSize="16"
+                            Grid.Column="0" 
+                            FontAttributes="Bold"
+                            HorizontalTextAlignment="Start"/>
+
+                            <Label 
+                            Grid.Column="1"
+                            FontAttributes="Bold"
+                            HorizontalTextAlignment="End"
+                            x:Name="VideoChannelName"
+                            Margin="0,10,0,10"
+                            FontFamily="Inter"
+                            Text="Planeta"
+                            FontSize="16"
+                            TextColor="Black"/>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+
+            </VerticalStackLayout>
             <Label
-                x:Name="PlaceholderText"
-                Text=""
-                TextColor="White"
                 HorizontalTextAlignment="Center"
-                FontFamily="Inter"
-                FontAttributes="Bold"
-                FontSize="50"/>
-        </VerticalStackLayout>
+                Margin="0,0,0,20"
+                VerticalOptions="End"
+                TextColor="Gray"
+                Text="Hint: You can click on the thumbnail to watch the video"/>
+        </StackLayout>
     </ScrollView>
 </ContentPage>
