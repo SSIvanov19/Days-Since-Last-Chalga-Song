@@ -102,6 +102,7 @@
 		<PackageReference Include="CommunityToolkit.Maui" Version="3.0.0" />
 		<PackageReference Include="DevExpress.Maui.Editors" Version="22.1.6" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+		<PackageReference Include="OneSignalSDK.DotNet" Version="4.3.0" />
 	</ItemGroup>
 
 	<ItemGroup>
