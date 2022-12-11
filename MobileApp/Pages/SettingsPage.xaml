@@ -22,8 +22,9 @@
                 FontAttributes="Bold"
                 FontSize="50"
                 Margin="0, 10, 0, 20"/>
-                <Frame CornerRadius="24"
-                       Margin="10,0,10,10">
+                <Frame CornerRadius="18"
+                       Margin="10,0,10,10"
+                       Padding="20,10">
                     <StackLayout>
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -47,21 +48,27 @@
                         </Grid>
                     </StackLayout>
                 </Frame>
-                <Frame CornerRadius="24"
-                       Margin="10,0,10,10">
+                <Frame CornerRadius="18"
+                    Margin="10,0,10,10">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OpenNewIssue"/>
+                    </Frame.GestureRecognizers>
                     <Label
                         FontFamily="Inter"
                         TextColor="Black"
                         FontAttributes="Bold"
                         FontSize="18">Report Issue</Label>
                 </Frame>
-                <Frame CornerRadius="24"
+                <Frame CornerRadius="18"
                        Margin="10,0,10,10">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OpenPrivacyPolices"/>
+                    </Frame.GestureRecognizers>
                     <Label
                         FontFamily="Inter"
                         TextColor="Black"
                         FontAttributes="Bold"
-                        FontSize="18">View Privacy Polices</Label>
+                        FontSize="18">View Privacy Policy</Label>
                 </Frame>
             </VerticalStackLayout>
             <Label
