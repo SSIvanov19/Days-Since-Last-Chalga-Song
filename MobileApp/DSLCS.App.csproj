@@ -18,8 +18,8 @@
 		<ApplicationIdGuid>de4dbdb9-84b6-4e53-9039-a9cd0cc2c15c</ApplicationIdGuid>
 
 		<!-- Versions -->
-		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
-		<ApplicationVersion>1</ApplicationVersion>
+		<ApplicationDisplayVersion>1.1</ApplicationDisplayVersion>
+		<ApplicationVersion>2</ApplicationVersion>
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
@@ -65,14 +65,25 @@
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-android33.0|AnyCPU'">
 	  <PublishTrimmed>False</PublishTrimmed>
 	  <RunAOTCompilation>False</RunAOTCompilation>
-	  <AndroidPackageFormat>apk</AndroidPackageFormat>
+	  <AndroidPackageFormat>aab</AndroidPackageFormat>
 	  <ApplicationTitle>Days Since Last Chalga Song</ApplicationTitle>
 	  <ApplicationId>com.salamnapromociya.dayssincelastchalgasong</ApplicationId>
+	  <AndroidUseAapt2>True</AndroidUseAapt2>
+	  <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
+	  <AndroidKeyStore>True</AndroidKeyStore>
+		<AndroidSigningKeyStore>ExamplePass</AndroidSigningKeyStore>
+	  <AndroidSigningStorePass>ExamplePass</AndroidSigningStorePass>
+	  <AndroidSigningKeyAlias>ExamplePass</AndroidSigningKeyAlias>
+	  <AndroidSigningKeyPass>ExamplePass</AndroidSigningKeyPass>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-android33.0|AnyCPU'">
 	  <ApplicationTitle>Days Since Last Chalga Song</ApplicationTitle>
 	  <ApplicationId>com.salamnapromociya.dayssincelastchalgasong</ApplicationId>
+	  <AndroidUseAapt2>True</AndroidUseAapt2>
+	  <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
+	  <AndroidPackageFormat>apk</AndroidPackageFormat>
+	  <AndroidKeyStore>False</AndroidKeyStore>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -80,7 +91,7 @@
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" ForegroundScale="0.65" Color="#FFFFFF" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Images\splash.png" Color="#FFFFFF" BaseSize="299,300" />
+		<MauiSplashScreen Include="Resources\Images\splash.png" Color="#FFFFFF" BaseSize="483,483" />
 		
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />

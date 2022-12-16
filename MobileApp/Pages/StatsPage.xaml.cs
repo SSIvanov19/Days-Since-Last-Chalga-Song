@@ -116,7 +116,8 @@ public partial class StatsPage : ContentPage
                 FontFamily = "Inter",
                 FontAttributes = FontAttributes.Bold,
                 MinimumWidthRequest = 240,
-                MaximumWidthRequest = 240
+                MaximumWidthRequest = 240,
+                TextColor = Colors.Black
             };
 
             var image = new Image

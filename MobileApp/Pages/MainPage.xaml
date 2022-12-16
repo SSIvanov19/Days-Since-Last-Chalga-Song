@@ -78,16 +78,19 @@
                             Text=""
                             FontSize="16"
                             FontFamily="Inter"
+                            TextColor="Black"
                             FontAttributes="Bold"/>
                         <Label
                             x:Name="VideoPublishedDate"
                             Padding="0,10,0,0"
                             FontFamily="Inter"
+                            TextColor="Black"
                             Text=""
                             FontSize="16"/>
                         <Label
                             x:Name="VideoChannelName"
                             Padding="0,10,0,0"
+                            TextColor="Black"
                             FontFamily="Inter"
                             Text=""
                             FontSize="16"/>

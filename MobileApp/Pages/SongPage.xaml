@@ -38,6 +38,7 @@
                         x:Name="VideoTitle"
                         Margin="0,10,0,10"
                         Text=""
+                        TextColor="Black"
                         FontSize="21"
                         FontFamily="Inter"
                         FontAttributes="Bold"/>

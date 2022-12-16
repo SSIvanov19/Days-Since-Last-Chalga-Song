@@ -43,6 +43,8 @@
                                 FontAttributes="Bold"
                                 HorizontalTextAlignment="Start"/>
                             <Switch
+                                OnColor="#dfd8f7"
+                                ThumbColor="#512bd4"
                                 Grid.Column="1"
                                 x:Name="NotificationSwitch"/>
                         </Grid>
