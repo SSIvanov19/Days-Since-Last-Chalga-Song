@@ -1,5 +1,5 @@
 <div align = "center">
-  <h1>Days Since Last Chalga Song
+  <h1>Days Since Last Chalga Song</h1>
 </div>
 
 <div align = "center">
@@ -13,6 +13,8 @@
 ## About 💻 <a name = "about"></a>
 Have you ever wonder when was the last chalga song released? Even if the answer is no, you are in the [right place](https://days-since-last-chalga-song.vercel.app/).
 
+<a href='https://play.google.com/store/apps/details?id=com.salamnapromociya.dayssincelastchalgasong&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' target="_blank"><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' width=200/>
+</a>
 
 ## 🔧 Technologies
 Build using the t3 stack, Days Since Last Chalga Song is using cutting edge technologies, inlcuding:
@@ -52,3 +54,5 @@ To start the development server, simply type:
 ```
 Thank you for scrolling this far! Please consider giving the repo a star ⭐.
 ```
+
+<sub>Google Play and the Google Play logo are trademarks of Google LLC.</sub>
