@@ -18,8 +18,8 @@
 		<ApplicationIdGuid>de4dbdb9-84b6-4e53-9039-a9cd0cc2c15c</ApplicationIdGuid>
 
 		<!-- Versions -->
-		<ApplicationDisplayVersion>1.1</ApplicationDisplayVersion>
-		<ApplicationVersion>2</ApplicationVersion>
+		<ApplicationDisplayVersion>1.2</ApplicationDisplayVersion>
+		<ApplicationVersion>3</ApplicationVersion>
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
@@ -71,10 +71,10 @@
 	  <AndroidUseAapt2>True</AndroidUseAapt2>
 	  <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
 	  <AndroidKeyStore>True</AndroidKeyStore>
-		<AndroidSigningKeyStore>ExamplePass</AndroidSigningKeyStore>
-	  <AndroidSigningStorePass>ExamplePass</AndroidSigningStorePass>
-	  <AndroidSigningKeyAlias>ExamplePass</AndroidSigningKeyAlias>
-	  <AndroidSigningKeyPass>ExamplePass</AndroidSigningKeyPass>
+		<AndroidSigningKeyStore>.\dslcs.keystore</AndroidSigningKeyStore>
+	  <AndroidSigningStorePass>R3pt1l123</AndroidSigningStorePass>
+	  <AndroidSigningKeyAlias>DSLCSKey</AndroidSigningKeyAlias>
+	  <AndroidSigningKeyPass>R3pt1l123</AndroidSigningKeyPass>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-android33.0|AnyCPU'">
@@ -105,6 +105,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\arrow.png" />
+	  <None Remove="Resources\Images\Banica.png" />
 	  <None Remove="Resources\Images\settings_page_icon.svg" />
 	  <None Remove="Resources\Images\stats_page_icon.svg" />
 	</ItemGroup>
@@ -122,6 +124,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Pages\NewYearPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\NewYearPageSinger.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\SettingsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

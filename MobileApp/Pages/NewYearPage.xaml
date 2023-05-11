@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DSLCS.App.Pages.NewYearPage"
+             Title="NewYearPage">
+    <ScrollView>
+        <ScrollView.Background>
+            <LinearGradientBrush EndPoint="0,1">
+                <GradientStop Color="#2e026d"
+                          Offset="0.1" />
+                <GradientStop Color="#15162c"
+                          Offset="1.0" />
+            </LinearGradientBrush>
+        </ScrollView.Background>
+        <Shell.BackButtonBehavior>
+            <BackButtonBehavior IconOverride="back_arrow.svg"
+                                IsVisible="True"
+                                IsEnabled="True"/>
+        </Shell.BackButtonBehavior>
+        <StackLayout>
+            <VerticalStackLayout Padding="20,40,20,20" VerticalOptions="FillAndExpand">
+                <ImageButton Source="back_arrow.svg"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    Margin="-5,-20,10,30">
+                    <ImageButton.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnBackButtonTapped"/>
+                    </ImageButton.GestureRecognizers>
+                </ImageButton>
+
+                <Label 
+                    Text="Which chalga song will you be in 2023?"
+                    FontSize="36"
+                    TextColor="White"
+                    HorizontalTextAlignment="Center"/>
+
+                <Grid>
+                    <Frame ZIndex="0" BackgroundColor="Transparent" BorderColor="Transparent">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="RotateTheWhell"/>
+                        </Frame.GestureRecognizers>
+                        <Image
+                            x:Name="Wheel"
+                            Margin="10,50,10,0"
+                            Source="banica.png"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"/>
+                    </Frame>
+
+                    <Frame ZIndex="1" BackgroundColor="Transparent"  BorderColor="Transparent">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="RotateTheWhell"/>
+                        </Frame.GestureRecognizers>
+                        <Image
+                            Margin="10,20,10,0"
+                            Source="arrow.png"
+                            VerticalOptions="Start"
+                            HorizontalOptions="Center"
+                            WidthRequest="70"/>
+                    </Frame>
+
+                    <Frame
+                        x:Name="SongFrame"
+                        ZIndex="2"
+                        CornerRadius="24"
+                        Margin="0,20,0,0"
+                        IsVisible="False">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="GoToArtist" />
+                        </Frame.GestureRecognizers>
+                        <StackLayout>
+                            <Border
+                                HeightRequest="180">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="12"/>
+                                </Border.StrokeShape>
+                                <Image
+                                    x:Name="VideoThumbnail"
+                                    Aspect="AspectFill">
+                                </Image>
+                            </Border>
+                            <Label
+                                LineBreakMode="TailTruncation"
+                                x:Name="VideoTitle"
+                                Padding="0,10,0,0"
+                                Text=""
+                                FontSize="26"
+                                FontFamily="Inter"
+                                TextColor="Black"
+                                FontAttributes="Bold"
+                                HorizontalTextAlignment="Center"/>
+                            <Label
+                                LineBreakMode="TailTruncation"
+                                x:Name="VideoAuthor"
+                                Padding="0,5,0,10"
+                                FontFamily="Inter"
+                                TextColor="Gray"
+                                Text=""
+                                FontSize="16"
+                                HorizontalTextAlignment="Center"/>
+                            <Label 
+                                x:Name="Wish"
+                                TextColor="Black"
+                                FontFamily="Inter"
+                                FontSize="16"
+                                Text= ""
+                                HorizontalTextAlignment="Center"/>
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+
+                <Frame CornerRadius="18"
+                       Margin="50,30,50,10"
+                       x:Name="Button"
+                       IsVisible="True">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="RotateTheWhell"/>
+                    </Frame.GestureRecognizers>
+                    <Label
+                        FontFamily="Inter"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        HorizontalTextAlignment="Center"
+                        FontSize="20">SPIN THE BANITSA!</Label>
+                </Frame>
+                
+            </VerticalStackLayout>
+
+            <ImageButton 
+                Source="back_arrow.svg"
+                RotationY="180"
+                Margin="0,0,20,15"
+                VerticalOptions="End"
+                HorizontalOptions="End">
+                <ImageButton.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnSingerButtonPressed"/>
+                </ImageButton.GestureRecognizers>
+            </ImageButton>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

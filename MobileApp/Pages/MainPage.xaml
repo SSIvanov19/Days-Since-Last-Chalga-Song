@@ -34,6 +34,25 @@
             <StackLayout
                  x:Name="MainLayout"
                  IsVisible="False">
+                <Frame Margin="0, 10, 0, 10" CornerRadius="24" x:Name="HolidayBanner" IsVisible="False">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTappedOverHolidayBanner"/>
+                    </Frame.GestureRecognizers>
+                    <StackLayout>
+                        <Label
+                            HorizontalTextAlignment="Center"
+                            FontSize="30"
+                            TextColor="Black"
+                            FontFamily="Inter"
+                            Text="Happy New Year"/>
+                        <Label
+                            HorizontalTextAlignment="Center"
+                            FontSize="16"
+                            TextColor="Gray"
+                            FontFamily="Inter"
+                            Text="Click here to see your wish"/>
+                    </StackLayout>
+                </Frame>
                 <Label
                     Text="Days since last chalga song:"
                     SemanticProperties.HeadingLevel="Level1"
@@ -55,7 +74,6 @@
                     FontFamily="Inter"
                     FontAttributes="Bold"/>
                 <Frame
-                    HeightRequest="320"
                     CornerRadius="24">
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnTappedOverVideoContainer"/>

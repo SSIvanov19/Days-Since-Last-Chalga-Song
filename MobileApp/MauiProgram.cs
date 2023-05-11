@@ -30,7 +30,9 @@ public static class MauiProgram
 			.AddSingleton<MainPage>()
 			.AddSingleton<StatsPage>()
 			.AddSingleton<SettingsPage>()
-			.AddSingleton<SongPage>();
+			.AddSingleton<SongPage>()
+			.AddSingleton<NewYearPage>()
+			.AddSingleton<NewYearPageSinger>();
 		
 
 #if DEBUG

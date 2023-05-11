@@ -15,5 +15,6 @@ public class MainActivity : MauiAppCompatActivity
 
         OneSignalSDK.DotNet.OneSignal.Default.Initialize("ec4e9923-e2ba-47fd-871c-f0d6c6e4debd");
         OneSignalSDK.DotNet.OneSignal.Default.PromptForPushNotificationsWithUserResponse();
+
     }
 }

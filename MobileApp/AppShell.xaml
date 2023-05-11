@@ -19,7 +19,8 @@
     <TabBar>
         <Tab Title="Main"
             Icon="main_page_icon.svg">
-            <ShellContent ContentTemplate="{DataTemplate local:Pages.MainPage}" />
+            <ShellContent ContentTemplate="{DataTemplate local:Pages.MainPage}"
+                          Route="main"/>
         </Tab>
         <Tab Title="Stats"
             Icon="stats_page_icon">
@@ -35,6 +36,12 @@
     <ShellContent
         ContentTemplate="{DataTemplate local:Pages.SongPage}"
         Route="video"/>
+    <ShellContent
+        ContentTemplate="{DataTemplate local:Pages.NewYearPage}"
+        Route="newyear"/>
+    <ShellContent
+        ContentTemplate="{DataTemplate local:Pages.NewYearPageSinger}"
+        Route="newyearsinger"/>
 
 </Shell>
 

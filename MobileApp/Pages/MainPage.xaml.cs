@@ -18,7 +18,7 @@ public partial class MainPage : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        
+
         var video = await _videoService.GetLatestVideo();
 
         if (video != null)
@@ -39,6 +39,13 @@ public partial class MainPage : ContentPage
             LoadingIndicator.IsVisible = false;
             LoadingText.Text = "There was a problem! Please try again later!";
         }
+
+        var today = DateTime.Now;
+
+        if (today.Month == 1 && today.Day == 1)
+        {
+            HolidayBanner.IsVisible = true;
+        }
     }
 
     protected async void OnTappedOverVideoContainer(object sender, EventArgs e)
@@ -52,5 +59,10 @@ public partial class MainPage : ContentPage
         {
             Console.WriteLine(ex.ToString());
         }
+    }
+
+    protected async void OnTappedOverHolidayBanner(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync($"//newyear");
     }
 }
