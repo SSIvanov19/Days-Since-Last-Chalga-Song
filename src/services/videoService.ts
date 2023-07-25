@@ -28,6 +28,17 @@ export default class VideoService {
     return json.items[0];
   }
 
+  async isShort(videoId: string): Promise<boolean> {
+    try {
+      const response = await fetch(`https://yt.lemnoslife.com/videos?part=short&id=${videoId}`);
+      const data = await response.json();
+      return data["items"][0]['short']['available'];
+    }
+    catch (e) {
+      return false;
+    }
+  }
+
   private apiKey = process.env.YOUTUBE_API_KEY;
   private channelsIds = [
     "UCu3z3dIQNb90UNp6_w5O5rw",

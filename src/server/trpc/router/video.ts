@@ -108,6 +108,12 @@ export const videoRouter = router({
       const videoService = new VideoService();
 
       const video = await videoService.getVideoInfo(videoId);
+      
+      if (await videoService.isShort(videoId)) {
+        return {
+          error: "Video is of type short",
+        };
+      }
 
       await ctx.prisma.video.create({
         data: {
