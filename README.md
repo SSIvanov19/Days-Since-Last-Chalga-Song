@@ -20,7 +20,7 @@ Have you ever wonder when was the last chalga song released? Even if the answer 
 
 These are our really cool sponsors! If you'd like to sponsor this project and have your avatar or company logo appear below <a href="https://github.com/sponsors/SSIvanov19" target="_blank">click here</a>. 💖
 
-<!-- sponsors --><!-- sponsors -->
+<!-- sponsors --><a href="https://github.com/ISBachvarov21"><img src="https://images.weserv.nl/?url=https://github.com/ISBachvarov21.png?v=4&h=50&w=50&fit=cover&mask=circle&maxage=7d" width="50px" alt="ISBachvarov21" /></a><!-- sponsors -->
 
 
 ## 🔧 Technologies
