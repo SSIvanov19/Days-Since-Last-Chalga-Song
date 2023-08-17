@@ -16,6 +16,13 @@ Have you ever wonder when was the last chalga song released? Even if the answer 
 <a href='https://play.google.com/store/apps/details?id=com.salamnapromociya.dayssincelastchalgasong&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' target="_blank"><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' width=200/>
 </a>
 
+## Sponsors
+
+These are our really cool sponsors! If you'd like to sponsor this project and have your avatar or company logo appear below <a href="https://github.com/sponsors/SSIvanov19" target="_blank">click here</a>. 💖
+
+<!-- sponsors --><!-- sponsors -->
+
+
 ## 🔧 Technologies
 Build using the t3 stack, Days Since Last Chalga Song is using cutting edge technologies, inlcuding:
   <p align="left"> 
