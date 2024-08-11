@@ -15,13 +15,13 @@
             </LinearGradientBrush>
         </ScrollView.Background>
         <Shell.BackButtonBehavior>
-            <BackButtonBehavior IconOverride="back_arrow.svg"
+            <BackButtonBehavior IconOverride="back_arrow.png"
                                 IsVisible="True"
                                 IsEnabled="True"/>
         </Shell.BackButtonBehavior>
         <StackLayout>
             <VerticalStackLayout Padding="20,40,20,20" VerticalOptions="FillAndExpand">
-                <ImageButton Source="back_arrow.svg"
+                <ImageButton Source="back_arrow.png"
                     Clicked="OnImageButtonClicked"
                     HorizontalOptions="Start"
                     VerticalOptions="Center"

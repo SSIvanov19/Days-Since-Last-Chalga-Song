@@ -16,12 +16,12 @@ public partial class SettingsPage : ContentPage
 
             if (e.Value)
             {
-                OneSignalSDK.DotNet.OneSignal.Default.PromptForPushNotificationsWithUserResponse();
-                OneSignalSDK.DotNet.OneSignal.Default.PushEnabled = true;
+                //OneSignalSDK.DotNet.OneSignal.Default.PromptForPushNotificationsWithUserResponse();
+                //OneSignalSDK.DotNet.OneSignal.Default.PushEnabled = true;
             }
             else
             {
-                OneSignalSDK.DotNet.OneSignal.Default.PushEnabled = false;
+                //OneSignalSDK.DotNet.OneSignal.Default.PushEnabled = false;
             }
         };
     }

@@ -18,18 +18,18 @@
     </Shell.Resources>
     <TabBar>
         <Tab Title="Main"
-            Icon="main_page_icon.svg">
+            Icon="main_page_icon.png">
             <ShellContent ContentTemplate="{DataTemplate local:Pages.MainPage}"
                           Route="main"/>
         </Tab>
         <Tab Title="Stats"
-            Icon="stats_page_icon">
+            Icon="stats_page_icon.png">
             <ShellContent 
                 ContentTemplate="{DataTemplate local:Pages.StatsPage}"
                 Route="stats"/>
         </Tab>
         <Tab Title="Settings"
-            Icon="settings_page_icon.svg">
+            Icon="settings_page_icon.png">
             <ShellContent ContentTemplate="{DataTemplate local:Pages.SettingsPage}" />
         </Tab>
     </TabBar>

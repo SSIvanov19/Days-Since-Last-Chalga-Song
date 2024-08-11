@@ -1,8 +1,8 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
-using OneSignalSDK.DotNet;
-using OneSignalSDK.DotNet.Core;
+//using OneSignalSDK.DotNet;
+//using OneSignalSDK.DotNet.Core;
 
 namespace DSLCS.App.Platforms.Android;
 
@@ -13,8 +13,8 @@ public class MainActivity : MauiAppCompatActivity
     {
         base.OnCreate(savedInstanceState);
 
-        OneSignalSDK.DotNet.OneSignal.Default.Initialize("ec4e9923-e2ba-47fd-871c-f0d6c6e4debd");
-        OneSignalSDK.DotNet.OneSignal.Default.PromptForPushNotificationsWithUserResponse();
+        // OneSignalSDK.DotNet.OneSignal.Default.Initialize("ec4e9923-e2ba-47fd-871c-f0d6c6e4debd");
+        // OneSignalSDK.DotNet.OneSignal.Default.PromptForPushNotificationsWithUserResponse();
 
     }
 }

@@ -1,6 +1,6 @@
 ﻿using DSLCS.App.Pages;
-using OneSignalSDK.DotNet;
-using OneSignalSDK.DotNet.Core;
+//using OneSignalSDK.DotNet;
+//using OneSignalSDK.DotNet.Core;
 
 namespace DSLCS.App;
 
@@ -29,15 +29,15 @@ public partial class App : Application
             Application.Current.Quit();
         }
         
-        OneSignalSDK.DotNet.OneSignal.Default.Initialize("ec4e9923-e2ba-47fd-871c-f0d6c6e4debd");
-        await OneSignalSDK.DotNet.OneSignal.Default.PromptForPushNotificationsWithUserResponse();
+        //OneSignalSDK.DotNet.OneSignal.Default.Initialize("ec4e9923-e2ba-47fd-871c-f0d6c6e4debd");
+        //await OneSignalSDK.DotNet.OneSignal.Default.PromptForPushNotificationsWithUserResponse();
 
         if (!Preferences.ContainsKey("NotificationPreference"))
         {
             Preferences.Set("NotificationPreference", true);
         }
 
-        OneSignalSDK.DotNet.OneSignal.Default.PushEnabled = Preferences.Get("NotificationPreference", true);
+       // OneSignalSDK.DotNet.OneSignal.Default.PushEnabled = Preferences.Get("NotificationPreference", true);
     }
 
     async void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)

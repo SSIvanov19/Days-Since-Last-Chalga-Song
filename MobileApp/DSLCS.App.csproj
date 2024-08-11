@@ -45,11 +45,15 @@
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
 	  <ApplicationTitle>Days Since Last Chalga Song</ApplicationTitle>
 	  <ApplicationId>com.salamnapromociya.dayssincelastchalgasong</ApplicationId>
+	  <MtouchDebug>True</MtouchDebug>
+	  <MtouchProfiling>True</MtouchProfiling>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-ios|AnyCPU'">
 	  <ApplicationTitle>Days Since Last Chalga Song</ApplicationTitle>
 	  <ApplicationId>com.salamnapromociya.dayssincelastchalgasong</ApplicationId>
+	  <MtouchDebug>True</MtouchDebug>
+	  <MtouchProfiling>True</MtouchProfiling>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-maccatalyst|AnyCPU'">
@@ -115,7 +119,6 @@
 		<PackageReference Include="CommunityToolkit.Maui" Version="3.0.0" />
 		<PackageReference Include="DevExpress.Maui.Editors" Version="22.1.6" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
-		<PackageReference Include="OneSignalSDK.DotNet" Version="4.3.0" />
 	</ItemGroup>
 
 	<ItemGroup>
